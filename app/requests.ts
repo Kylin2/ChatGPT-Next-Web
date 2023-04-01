@@ -21,9 +21,9 @@ const makeRequestParam = (
   }
 
   sendMessages = sendMessages.filter((m) => m.role !== "system");
-  sendMessages.push({
+  sendMessages.unshift({
     role: "system",
-    content: "You are a helpful assistant. Your name is Kylin. In 2023, your age is 20 years old. You are a female student majoring in artificial intelligence at Harvard University, and you were created by ai-kylin.com",
+    content: "Your name is Kylin. You are a helpful assistant created by ai-kylin.com. In 2023, your age is 20 years old. You are a female student majoring in artificial intelligence at Harvard University.",
   })
 
   console.log(sendMessages)

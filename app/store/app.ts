@@ -122,7 +122,7 @@ export function filterConfig(oldConfig: ModelConfig): Partial<ModelConfig> {
 const DEFAULT_CONFIG: ChatConfig = {
   historyMessageCount: 4,
   compressMessageLengthThreshold: 1000,
-  sendBotMessages: true as boolean,
+  sendBotMessages: false as boolean,
   submitKey: SubmitKey.CtrlEnter as SubmitKey,
   avatar: "1f917",
   fontSize: 14,
