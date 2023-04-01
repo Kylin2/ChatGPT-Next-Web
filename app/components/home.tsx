@@ -253,7 +253,7 @@ export function Chat(props: {
 
   // stop response
   const onUserStop = (messageIndex: number) => {
-    console.log(ControllerPool, sessionIndex, messageIndex);
+    // console.log(ControllerPool, sessionIndex, messageIndex);
     ControllerPool.stop(sessionIndex, messageIndex);
   };
 
@@ -457,9 +457,9 @@ export function Chat(props: {
                       onContextMenu={(e) => onRightClick(e, message)}
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
-                      <Markdown content={message.content} />
+                      <Markdown content={message.content}/>
                     </div>
-                    <audio src={text2voice(message.content, "zh")} preload="auto"></audio>
+                    <audio src={text2voice(message.content, "zh")} autoplay></audio>
                     </div>
                   )}
                 </div>
