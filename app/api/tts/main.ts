@@ -1,5 +1,5 @@
-export function text2voice(text, lan){
-    let obj = {
+export function text2voice(text: string, lan: string): string {
+    let obj: {[key: string]: any} = {
         tex: text,
         lan: lan.toUpperCase(),
         cuid: "baike",
@@ -9,10 +9,10 @@ export function text2voice(text, lan){
         spd: 5,
         per: 0, // 111,103,5
     }
-    return 'https://tts.baidu.com/text2audio' + axiosObj(obj)
+    return 'https://tts.baidu.com/text2audio' + axiosObj(obj);
 }
 
-function axiosObj (paramObj) {
+function axiosObj (paramObj: {[key: string]: string}): string {
     var res = '?'
     for (var key in paramObj) {
         res += '&' + key + '=' + paramObj[key]
