@@ -20,6 +20,14 @@ const makeRequestParam = (
     sendMessages = sendMessages.filter((m) => m.role !== "assistant");
   }
 
+  sendMessages = sendMessages.filter((m) => m.role !== "system");
+  sendMessages.push({
+    role: "system",
+    content: "You are a helpful assistant. Your name is Kylin. In 2023, your age is 20 years old. You are a female student majoring in artificial intelligence at Harvard University, and you were created by ai-kylin.com",
+  })
+
+  console.log(sendMessages)
+
   return {
     model: "gpt-3.5-turbo",
     messages: sendMessages,
