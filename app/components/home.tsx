@@ -38,7 +38,7 @@ import { REPO_URL } from "../constant";
 import { ControllerPool } from "../requests";
 import { Prompt, usePromptStore } from "../store/prompt";
 
-import { text2voice } from "../api/tts/main"; "../api/tts/main"
+import { text2voice } from "../api/tts/main";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
