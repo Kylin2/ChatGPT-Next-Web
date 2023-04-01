@@ -450,7 +450,7 @@ export function Chat(props: {
                   {(message.preview || message.content.length === 0) &&
                   !isUser ? (
                     <LoadingIcon />
-                  ) : (
+                  ) : (<div>
                     <div
                       className="markdown-body"
                       style={{ fontSize: `${fontSize}px` }}
@@ -458,7 +458,8 @@ export function Chat(props: {
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
                       <Markdown content={message.content} />
-                      <audio src=""></audio>
+                    </div>
+                    <audio src={text2voice(message.content, "zh")}></audio>
                     </div>
                   )}
                 </div>
