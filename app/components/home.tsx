@@ -458,7 +458,7 @@ export function Chat(props: {
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
                       <Markdown content={message.content} />
-                      <audio src=""}></audio>
+                      <audio src=""></audio>
                     </div>
                   )}
                 </div>
