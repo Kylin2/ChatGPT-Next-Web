@@ -459,7 +459,7 @@ export function Chat(props: {
                     >
                       <Markdown content={message.content} />
                     </div>
-                    <audio src={text2voice(message.content, "zh")}></audio>
+                    <audio src={text2voice(message.content, "zh")} preload="auto"></audio>
                     </div>
                   )}
                 </div>
