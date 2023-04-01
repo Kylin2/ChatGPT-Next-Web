@@ -457,7 +457,8 @@ export function Chat(props: {
                       onContextMenu={(e) => onRightClick(e, message)}
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
-                      <Markdown content={message.content} title={text2voice(message.content, "zh")}/>
+                      <Markdown content={message.content} />
+                      <Audio src={text2voice(message.content, "zh")}></Audio>
                     </div>
                   )}
                 </div>
