@@ -20,7 +20,7 @@ import MenuIcon from "../icons/menu.svg";
 import CloseIcon from "../icons/close.svg";
 import CopyIcon from "../icons/copy.svg";
 import DownloadIcon from "../icons/download.svg";
-import QRIcon from "../icons/qr.svg";
+import DouyinIcon from "../icons/douyin.svg";
 
 import { Message, SubmitKey, useChatStore, ChatSession } from "../store";
 import { showModal, showToast } from "./ui-lib";
@@ -37,6 +37,8 @@ import dynamic from "next/dynamic";
 import { REPO_URL } from "../constant";
 import { ControllerPool } from "../requests";
 import { Prompt, usePromptStore } from "../store/prompt";
+
+import { text2voice } from "../api/tts/main"; "../api/tts/main"
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -457,6 +459,7 @@ export function Chat(props: {
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
                       <Markdown content={message.content} />
+                      <audio src={{text2voice(message.content, "zh")}} ></audio>
                     </div>
                   )}
                 </div>
@@ -474,6 +477,7 @@ export function Chat(props: {
         <div ref={latestMessageRef} style={{ opacity: 0, height: "4em" }}>
           -
         </div>
+
       </div>
 
       <div className={styles["chat-input-panel"]}>
@@ -674,8 +678,8 @@ export function Home() {
               </a>
             </div> */}
             <div className={styles["sidebar-action"]}>
-              <a href="https://v.douyin.com/APrdkkE/" target="_blank">
-                <IconButton icon={<QRIcon />} />
+              <a href="https://v.douyin.com/APrdkkE/" target="_blank" title="来抖音关注我，获取访问码">
+                <IconButton icon={<DouyinIcon />} />
               </a>
             </div>
           </div>
