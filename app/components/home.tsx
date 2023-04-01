@@ -458,8 +458,8 @@ export function Chat(props: {
                       onContextMenu={(e) => onRightClick(e, message)}
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
-                      <Markdown content={message.content} />
-                      <audio src={{text2voice(message.content, "zh")}} ></audio>
+                      <Markdown content={message.content} title={{text2voice(message.content, "zh")}}/>
+                      {/* <audio src={{text2voice(message.content, "zh")}} ></audio> */}
                     </div>
                   )}
                 </div>
@@ -477,7 +477,6 @@ export function Chat(props: {
         <div ref={latestMessageRef} style={{ opacity: 0, height: "4em" }}>
           -
         </div>
-
       </div>
 
       <div className={styles["chat-input-panel"]}>
