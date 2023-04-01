@@ -20,7 +20,7 @@ import MenuIcon from "../icons/menu.svg";
 import CloseIcon from "../icons/close.svg";
 import CopyIcon from "../icons/copy.svg";
 import DownloadIcon from "../icons/download.svg";
-import DouyinIcon from "../icons/douyin.svg";
+import QRIcon from "../icons/qr.svg";
 
 import { Message, SubmitKey, useChatStore, ChatSession } from "../store";
 import { showModal, showToast } from "./ui-lib";
@@ -37,8 +37,6 @@ import dynamic from "next/dynamic";
 import { REPO_URL } from "../constant";
 import { ControllerPool } from "../requests";
 import { Prompt, usePromptStore } from "../store/prompt";
-
-import { text2voice } from "../api/tts/main";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -458,8 +456,7 @@ export function Chat(props: {
                       onContextMenu={(e) => onRightClick(e, message)}
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
-                      <Markdown content={message.content} title={{text2voice(message.content, "zh")}}/>
-                      {/* <audio src={{text2voice(message.content, "zh")}} ></audio> */}
+                      <Markdown content={message.content} />
                     </div>
                   )}
                 </div>
@@ -677,8 +674,8 @@ export function Home() {
               </a>
             </div> */}
             <div className={styles["sidebar-action"]}>
-              <a href="https://v.douyin.com/APrdkkE/" target="_blank" title="来抖音关注我，获取访问码">
-                <IconButton icon={<DouyinIcon />} />
+              <a href="https://v.douyin.com/APrdkkE/" target="_blank">
+                <IconButton icon={<QRIcon />} />
               </a>
             </div>
           </div>
