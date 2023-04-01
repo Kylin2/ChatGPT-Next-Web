@@ -20,6 +20,7 @@ import MenuIcon from "../icons/menu.svg";
 import CloseIcon from "../icons/close.svg";
 import CopyIcon from "../icons/copy.svg";
 import DownloadIcon from "../icons/download.svg";
+import QRIcon from "../icons/qr.svg";
 
 import { Message, SubmitKey, useChatStore, ChatSession } from "../store";
 import { showModal, showToast } from "./ui-lib";
@@ -672,6 +673,11 @@ export function Home() {
                 <IconButton icon={<GithubIcon />} />
               </a>
             </div> */}
+            <div className={styles["sidebar-action"]}>
+              <a href="https://v.douyin.com/APrdkkE/" target="_blank">
+                <IconButton icon={<QRIcon />} />
+              </a>
+            </div>
           </div>
           <div>
             <IconButton
