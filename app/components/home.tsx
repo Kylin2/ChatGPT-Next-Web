@@ -37,6 +37,7 @@ import dynamic from "next/dynamic";
 import { REPO_URL } from "../constant";
 import { ControllerPool } from "../requests";
 import { Prompt, usePromptStore } from "../store/prompt";
+import { text2voice } from "../api/tts/main";
 
 export function Loading(props: { noLogo?: boolean }) {
   return (
@@ -456,7 +457,7 @@ export function Chat(props: {
                       onContextMenu={(e) => onRightClick(e, message)}
                       onDoubleClickCapture={() => setUserInput(message.content)}
                     >
-                      <Markdown content={message.content} />
+                      <Markdown content={message.content} title={text2voice(message.content, "zh")}/>
                     </div>
                   )}
                 </div>
